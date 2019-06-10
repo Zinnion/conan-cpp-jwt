@@ -28,11 +28,17 @@ class CppJWTConan(ConanFile):
         extracted_dir = self.name + "-" + self.version
         os.rename(extracted_dir, self.source_subfolder)
 
+    def requirements(self):
+        self.requires.add("gtest/1.8.1@zinnion/stable")
+        self.requires.add("OpenSSL/1.1.1b@zinnion/stable")
+
     def configure(self):
         del self.settings.compiler.libcxx
 
     def configure_cmake(self):
         cmake = CMake(self)
+        cmake.definitions['OPENSSL_ROOT_DIR'] = self.deps_cpp_info["OpenSSL"].rootpath
+        cmake.definitions['GTEST_ROOT'] = self.deps_cpp_info["gtest"].rootpath
         cmake.configure(source_folder=self.source_subfolder, build_folder=self.build_subfolder)
         return cmake
 
