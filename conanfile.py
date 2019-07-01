@@ -7,7 +7,7 @@ import os
 class CppJwtConan(ConanFile):
     name = "cpp-jwt"
     version = "1.1.2"
-    url = "https://github.com/DEGoodmanWilson/conan-cpp-jwt"
+    url = "https://github.com/zinnion/conan-cpp-jwt"
     description = "A C++ library for handling JWT tokens"
     license = "https://github.com/maurodelazeri/cpp-jwt/blob/master/LICENSE"
     no_copy_source = True
