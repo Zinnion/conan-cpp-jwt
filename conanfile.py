@@ -12,7 +12,7 @@ class CppJwtConan(ConanFile):
     license = "https://github.com/maurodelazeri/cpp-jwt/blob/master/LICENSE"
     no_copy_source = True
     build_policy = "always"
-    requires = "OpenSSL/1.1.1b@zinnion/stable", "jsonformoderncpp/3.6.1@zinnion/stable"
+    requires = "OpenSSL/1.1.1d@zinnion/stable", "jsonformoderncpp/3.6.1@zinnion/stable"
 
     def source(self):
         source_url = "https://github.com/maurodelazeri/cpp-jwt"
